@@ -27,9 +27,8 @@ public class game_screen extends JFrame {
 
 	private JButton seoulCastle = new JButton();
 	
+	static human_list list = new human_list();
 	//임시 무장
-	static human[] humanlist= new human[5];
-	static String name[] = {"가", "나", "다", "라", "마"};
 
 	public game_screen() {
 		setUndecorated(true);
@@ -41,10 +40,6 @@ public class game_screen extends JFrame {
 		setVisible(true);
 		setBackground(new Color(0, 0, 0, 0));
 		setLayout(null);
-		
-		for (int i = 0; i < 5; i++) {
-			humanlist[i] = new human(name[i], 20 + i);
-		}
 
 		exitButton.setBounds(650, 0, 50, 30);
 		exitButton.addMouseListener(new MouseAdapter() {
@@ -87,7 +82,7 @@ public class game_screen extends JFrame {
 		seoulCastle.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
-				new game_castle("seoul", humanlist);
+				new game_castle("seoul", list);
 			}
 		});
 		add(seoulCastle);
