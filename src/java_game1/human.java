@@ -9,11 +9,12 @@ public class human {
 	int ATT = 0;
 	
 	
-	public human(String name, int age, int STR, int INT, int ATT) {
+	public human(String name, int age, int STR, int INT, int ATT, int location) {
 		this.name = name;
 		this.age = age;
 		this.STR = STR;
 		this.INT = INT;
 		this.ATT = ATT;
+		this.location = location;
 	}
 }
