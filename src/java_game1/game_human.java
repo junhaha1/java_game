@@ -19,7 +19,7 @@ public class game_human extends JFrame{
 	private int mouseX, mouseY;
 	ArrayList<JTextField> info_list = new ArrayList<JTextField>();
 	
-	public game_human(String name, human_list list) {
+	public game_human(String name, human_list list, int code) {
 		setTitle(name);
 		setUndecorated(true);
 		setSize(Main.HUMAN_WIDTH, Main.HUMAN_HEIGHT);
@@ -41,7 +41,7 @@ public class game_human extends JFrame{
 		human_info.setLayout(new BoxLayout(human_info, BoxLayout.Y_AXIS));
 		
 		for (human i : list.Human) {
-			if (i.location == 1)
+			if (i.location == code)
 				info_list.add(new JTextField(i.name + " " + i.STR + " " + i.INT + " " + i.ATT + " " + i.age));
 		}
 		

@@ -29,7 +29,7 @@ public class game_castle extends JFrame{
 	
 	private int mouseX, mouseY;
 	
-	public game_castle(String name, human_list list) {
+	public game_castle(String name, human_list list, castle my) {
 		setTitle(name);
 		setUndecorated(true);
 		setSize(Main.CASTLE_WIDTH, Main.CASTLE_HEIGHT);
@@ -72,6 +72,10 @@ public class game_castle extends JFrame{
 		res22.setBounds(95, 195, 150, 30);
 		res33.setBounds(95, 320, 150, 30);
 		
+		res11.setText(Integer.toString(my.gold));
+		res22.setText(Integer.toString(my.rice));
+		res33.setText(Integer.toString(my.spec));
+		
 		res11.setEnabled(false);
 		res22.setEnabled(false);
 		res33.setEnabled(false);
@@ -105,7 +109,7 @@ public class game_castle extends JFrame{
 		info2_btn1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
-				new game_human("¼­¿ï", list);
+				new game_human(name, list, my.code);
 			}
 		});
 		

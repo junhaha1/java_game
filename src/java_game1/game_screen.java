@@ -25,10 +25,12 @@ public class game_screen extends JFrame {
 
 	private JButton backButton = new JButton("back");
 
-	private JButton seoulCastle = new JButton();
+	private JButton seoulCastle = new JButton(); // 임시 서울 버튼
+	private JButton busanCastle = new JButton(); // 임시 서울 버튼
 	
-	static human_list list = new human_list();
-	//임시 무장
+	
+	public human_list list_h = new human_list(); //임시 무장
+	public castle_list list_c = new castle_list(); //임시 도시
 
 	public game_screen() {
 		setUndecorated(true);
@@ -82,10 +84,19 @@ public class game_screen extends JFrame {
 		seoulCastle.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
-				new game_castle("seoul", list);
+				new game_castle("seoul", list_h, list_c.get(0));
 			}
 		});
 		add(seoulCastle);
+		
+		busanCastle.setBounds(410, 450, 20, 20);
+		busanCastle.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				new game_castle("busan", list_h, list_c.get(1));
+			}
+		});
+		add(busanCastle);
 	}
 
 	public void paint(Graphics g) {
