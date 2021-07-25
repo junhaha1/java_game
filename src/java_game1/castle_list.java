@@ -10,7 +10,7 @@ public class castle_list {
 		Castle.add(new castle(80000, 800, 200000, 7000, 60, 900, 2)); // 임시 부산
 	}
 	
-	public castle get(int i) {
+	public castle get(int i) { //해당 인덱스에 맞는 성 객체 리턴
 		return Castle.get(i);
 	}
 }

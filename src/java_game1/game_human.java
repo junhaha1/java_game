@@ -41,7 +41,7 @@ public class game_human extends JFrame{
 		human_info.setLayout(new BoxLayout(human_info, BoxLayout.Y_AXIS));
 		
 		for (human i : list.Human) {
-			if (i.location == code)
+			if (i.location == code) // 성 코드와 인물 위치 코드가 맞는 것만 정보 리스트에 추가
 				info_list.add(new JTextField(i.name + " " + i.STR + " " + i.INT + " " + i.ATT + " " + i.age));
 		}
 		

@@ -79,7 +79,7 @@ public class game_screen extends JFrame {
 			}
 		});
 		add(menuBar);
-
+		/////////성 버튼 추가/////////////////////////////////// -> 나중에 성 갯수가 많아질 예정이므로 성 버튼을 배열로 만들어두기.
 		seoulCastle.setBounds(280, 340, 20, 20);
 		seoulCastle.addMouseListener(new MouseAdapter() {
 			@Override
@@ -97,6 +97,7 @@ public class game_screen extends JFrame {
 			}
 		});
 		add(busanCastle);
+		/////////////////////////////////////////////////////
 	}
 
 	public void paint(Graphics g) {

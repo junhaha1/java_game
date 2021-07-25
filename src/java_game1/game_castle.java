@@ -109,7 +109,7 @@ public class game_castle extends JFrame{
 		info2_btn1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
-				new game_human(name, list, my.code);
+				new game_human(name, list, my.code); //성 이름 , 인물 리스트, 성 코드 보내기
 			}
 		});
 		
