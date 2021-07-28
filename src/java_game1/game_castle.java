@@ -29,8 +29,8 @@ public class game_castle extends JFrame{
 	
 	private int mouseX, mouseY;
 	
-	public game_castle(String name, human_list list, castle my) {
-		setTitle(name);
+	public game_castle(human_list list, castle my) {
+		setTitle(my.name);
 		setUndecorated(true);
 		setSize(Main.CASTLE_WIDTH, Main.CASTLE_HEIGHT);
 		setResizable(false);
@@ -61,7 +61,7 @@ public class game_castle extends JFrame{
 		info1.setBackground(Color.LIGHT_GRAY);
 		info1.setLayout(null);
 		
-		title = new JLabel(name);
+		title = new JLabel(my.name);
 		res1.setBounds(0, 0, 120, 30);
 		
 		res1.setBounds(10, 30, 120, 80);
@@ -109,7 +109,7 @@ public class game_castle extends JFrame{
 		info2_btn1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
-				new game_human(name, list, my.code); //성 이름 , 인물 리스트, 성 코드 보내기
+				new game_human(my.name, list, my.code); //성 이름 , 인물 리스트, 성 코드 보내기
 			}
 		});
 		
