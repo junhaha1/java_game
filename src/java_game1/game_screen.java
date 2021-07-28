@@ -25,9 +25,7 @@ public class game_screen extends JFrame {
 
 	private JButton backButton = new JButton("back");
 
-	private JButton seoulCastle = new JButton(); // 임시 서울 버튼
-	private JButton busanCastle = new JButton(); // 임시 부산 버튼
-	
+	private JButton[] Castle_btn = new JButton[5]; //임시 성 버튼 
 	
 	public human_list list_h = new human_list(); //임시 무장
 	public castle_list list_c = new castle_list(); //임시 도시
@@ -79,24 +77,14 @@ public class game_screen extends JFrame {
 			}
 		});
 		add(menuBar);
-		/////////성 버튼 추가/////////////////////////////////// -> 나중에 성 갯수가 많아질 예정이므로 성 버튼을 배열로 만들어두기.
-		seoulCastle.setBounds(280, 340, 20, 20);
-		seoulCastle.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				new game_castle("seoul", list_h, list_c.get(0));
-			}
-		});
-		add(seoulCastle);
 		
-		busanCastle.setBounds(410, 450, 20, 20);
-		busanCastle.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				new game_castle("busan", list_h, list_c.get(1));
-			}
-		});
-		add(busanCastle);
+		/////////성 버튼 추가///////////////////////////////////
+		for (int i = 0; i < 5; i++) {
+			Castle_btn[i] = new JButton();
+			Castle_btn[i].setBounds(list_c.get(i).x_coo, list_c.get(i).y_coo, 20, 20);
+			btn_func(Castle_btn[i], i); //버튼 기능 만들기
+			add(Castle_btn[i]);
+		}
 		/////////////////////////////////////////////////////
 	}
 
@@ -111,5 +99,14 @@ public class game_screen extends JFrame {
 		g.drawImage(Background, 0, 0, null);
 		paintComponents(g);
 		this.repaint();
+	}
+	
+	public void btn_func(JButton a, int i) {
+		a.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				new game_castle(list_h, list_c.get(i));
+			}
+		});
 	}
 }
