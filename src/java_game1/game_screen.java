@@ -26,7 +26,7 @@ public class game_screen extends JFrame {
 	private JButton backButton = new JButton("back");
 
 	private JButton seoulCastle = new JButton(); // 임시 서울 버튼
-	private JButton busanCastle = new JButton(); // 임시 서울 버튼
+	private JButton busanCastle = new JButton(); // 임시 부산 버튼
 	
 	
 	public human_list list_h = new human_list(); //임시 무장
